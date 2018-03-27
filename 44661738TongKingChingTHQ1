@@ -1,0 +1,41 @@
+Question1
+	fib<-function(n){
+	x=vector()
+	x[1]=1
+	x[2]=1
+	for(i in 3:n)
+	x[i] = x[i-1] + x[i-2]
+	return(x)
+	}
+
+	Question3
+	a.
+	setwd("~/Download")
+	dataset<- read.csv("PersonenSchaden.csv", header = TRUE)
+	b.
+	summary(dataset$total)
+	var(dataset$total)
+	sd(dataset$total)
+	c.
+	hist(dataset$total, breaks=250)
+	d.
+	delay<- dataset$finmonth-dataset$accmonth
+	hist(delay)
+	e.
+	proportion<hist(dataset$legrep)
+	proportion$counts = proportion$counts/sum(proportion$counts)
+	plot(proportion)
+	f.
+	injurycode<- rbind(dataset$inj1,dataset$inj2,dataset$inj3,dataset$inj4,dataset$inj5)
+	injury<-hist(injurycode)
+	injury$counts=injury$counts/sum(injury$counts)
+	plot(injury)
+	h.
+	logdollar<- log(dataset$total)
+	hist(logdollar)
+	i.
+	plot(dataset$op_time,dataset$total, xlab = "operational time", ylab = "claimsize")
+	plot(dataset$op_time,logdollar, xlab = "operational time", ylab = "log claimsize")
+	k.
+	colour<-factor(dataset$legrep)
+	plot(dataset$op_time,logdollar, xlab = "operational time", ylab = "log claimsize", col=c("purple3","red2")[colour])
