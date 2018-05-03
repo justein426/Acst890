@@ -1,0 +1,23 @@
+Q1
+a.)egrep “&#x2713” foo.html
+b.)sed –i ‘‘ ‘50,100s/<th>/<th class=”C”>/g’ foo.html
+c.)vim –d my_book_20180430.txt  my_book_20180501.txt
+d.)sed –n “100,200p” my_book_20180501.txt
+e.)sed –i ‘’ ‘100,200d’ my_book_20180501.txt
+
+Q2.
+#!/bin/bash
+#Read the current list file
+for file in $(current_list.txt); 
+#move all the file with name in current list to the new directory
+do 
+cp "$file" ~/../../new; 
+done
+# move to the new directory
+cd ~/../../new
+#read the file which exist in the new directory
+ls|while read file;
+#loop to change all the file that exist in the directory with two condition,adding ACST890_s1_2018_ in the front and adding .txt at the end
+do
+mv "$file"  "$(echo "$file"|sed -e"s/^/ACST890_s1_2018_/g" -e"s/$/.txt/g")" ;
+done
