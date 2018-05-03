@@ -8,10 +8,10 @@ e.)sed –i ‘’ ‘100,200d’ my_book_20180501.txt
 Q2.
 #!/bin/bash
 #Read the current list file
-for file in $(current_list.txt); 
+for file in $(cat current_list.txt);
 #move all the file with name in current list to the new directory
-do 
-cp "$file" ~/../../new; 
+do
+cp "$file" ~/../../new;
 done
 # move to the new directory
 cd ~/../../new
