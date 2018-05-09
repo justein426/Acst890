@@ -1,0 +1,78 @@
+#Q2 Assignment
+ import random as rd
+ def toss_coin(number_of_times):   #Define a function toss_coin
+        number_of_heads = 0         #Define two variable to count the heads and tails
+        number_of_tails = 0
+        for i in range(number_of_times):    #Starting a loop for the number you choose to toss the coin
+                toss = rd.randint(0,1)      #Define a variable call toss, generate number 0 or 1 
+                if toss == 0:               #Seperate two causes by using 'if'
+                        number_of_heads +=1
+                        print('head')
+                else :
+                        number_of_tails +=1
+                        print('tail')
+        print('number of heads', number_of_heads)       #print out the final result
+        print('number of tail', number_of_tails)
+
+#Assignment Q3
+
+def Tax(Income_Amount):     #Define a function Tax
+
+    if 0 < Income_Amount <= 18200:                            #Use if to seperate different amount of income          with different amount of tax
+        Tax_liability = 0                                     #Define a variable calculate tax liability
+        After_tax_income = Income_Amount - Tax_liability      #Define a vairable calculate the After tax income
+        print('Tax liability', Tax_liability)
+        print('After_tax_income', After_tax_income)
+
+    elif 18200 < Income_Amount <= 37000:
+        Tax_liability = (Income_Amount - 18200) * 0.19
+        After_tax_income = Income_Amount - Tax_liability
+        print('Tax liability', Tax_liability)
+        print('After_tax_income', After_tax_income)
+
+    elif 37000 < Income_Amount <= 87000:
+        Tax_liability = (Income_Amount - 37000) * 0.325 + 3572
+        After_tax_income = Income_Amount - Tax_liability
+        print('Tax liability', Tax_liability)
+        print('After_tax_income', After_tax_income)
+
+    elif 87000 < Income_Amount <= 180000:
+        Tax_liability = (Income_Amount - 87000) * 0.37 + 19822
+        After_tax_income = Income_Amount - Tax_liability
+        print('Tax liability', Tax_liability)
+        print('After_tax_income', After_tax_income)
+
+    else:
+        Tax_liability = (Income_Amount - 180000) * 0.45 + 54532
+        After_tax_income = Income_Amount - Tax_liability
+        print('Tax liability', Tax_liability)
+        print('After_tax_income', After_tax_income)
+
+#Assignment Q4
+
+def Fibonacci(number):      #Define a function Fibonacci with variable number
+        n1=1                #Define the first two terms
+        n2=1
+        if number <= 0 :        #The Fibonacci series can't be negative or zero
+                print('Error')
+
+        elif number == 1:
+                print('Fibonacci:')
+                print(n1)
+
+        elif number == 2:
+                print('Fibonacci:')
+                print(n1)
+                print(n2)
+
+        else :
+                print('Fibonacci:')
+                print(n1)
+                print(n2)
+
+        for i in range(number - 2):     #Start a loop is the 'number' is  larger than two
+
+                    nth = n1 + n2
+                    n1 = n2
+                    n2 = nth
+                    print(nth)
